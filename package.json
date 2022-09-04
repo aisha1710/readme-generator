@@ -1,0 +1,23 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "generates read me files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aisha1710/readme-generator.git"
+  },
+  "author": "aisha hassan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aisha1710/readme-generator/issues"
+  },
+  "homepage": "https://github.com/aisha1710/readme-generator#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.4"
+  }
+}
