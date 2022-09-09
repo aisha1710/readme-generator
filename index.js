@@ -1,9 +1,7 @@
-// TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
-// TODO: Create an array of questions for user input
 const questions = () => {
   return inquirer.prompt([
     {
@@ -40,7 +38,7 @@ const questions = () => {
       type: "list",
       message: "what license would you like to use? ",
       name: "license",
-      choices: ["AAL", "ISC", "MIT", "NTP", "W3C"],
+      choices: ["Perl", "ISC", "MIT", "IBM", "Mozilla"],
     },
     {
       type: "input",
@@ -55,7 +53,6 @@ const questions = () => {
   ]);
 };
 
-// TODO: Create a function to write README file
 const writeToFile = (fileName, data) => {
   fs.writeFile(fileName, data, (err) =>
     err
@@ -64,17 +61,10 @@ const writeToFile = (fileName, data) => {
   );
 };
 
-// TODO: Create a function to initialize app
-// async function init() {
-//   let answers = await questions();
-//   writeToFile(answers.fileName, generateMarkdown(answers));
-// }
 const init = () => {
-  questions()
-    // Use writeFile method imported from fs.promises to use promises instead of
-    // a callback function
-    .then((answers) => writeToFile("README.md", generateMarkdown(answers)));
+  questions().then((answers) =>
+    writeToFile("README.md", generateMarkdown(answers))
+  );
 };
 
-// Function call to initialize app
 init();
